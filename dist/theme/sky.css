@@ -358,6 +358,15 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
   color: var(--r-link-color);
 }
 
+.container {
+  display: flex;
+  align-items: center;
+}
+
+.col {
+  flex: 1;
+}
+
 /*********************************************
  * PRINT BACKGROUND
  *********************************************/

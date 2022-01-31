@@ -1,40 +1,302 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
 
-		<title>reveal.js</title>
+    <title>reveal.js</title>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+    <link rel="stylesheet" href="dist/reset.css" />
+    <link rel="stylesheet" href="dist/reveal.css" />
+    <link rel="stylesheet" href="dist/theme/sky.css" />
+    <link rel="stylesheet" href="./css/self.css" />
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+    <!-- Theme used for syntax highlighted code -->
+    <link rel="stylesheet" href="plugin/highlight/monokai.css" />
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section
+          data-background-image="https://wallpapercave.com/wp/wp8882813.png"
+        >
+          <div style="position: relative; min-height: 60vh">
+            <h4 style="position: absolute; bottom: 10px; color: #fff">
+              Ruslan Kupzhassarov - RSSchool - 2021q3
+            </h4>
+          </div>
+        </section>
+        <section>
+          <section>What is Typescript?</section>
+          <section>Why do I need it?</section>
+        </section>
+        <section>
+          Typescript is a scripting language that compiles to JavaScript.
+        </section>
+        <section>
+          <div class="container">
+            <div class="col">
+              <h3>Anders Hejlsberg</h3>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Anders_Hejlsberg.jpg/220px-Anders_Hejlsberg.jpg"
+                alt=""
+              />
+            </div>
+            <div class="col">
+              <p>Began in 2012</p>
+              <p>C#, Delphi creator</p>
+            </div>
+          </div>
+        </section>
+        <section>
+			<div class="container">
+				<div class="col">
+					<img
+					style="width: 50%"
+					src="https://cdn.dribbble.com/users/510062/screenshots/5590983/__-1_1.gif"
+					alt=""
+				  />
+				</div>
+				<div class="col">
+					from the very beginning, the new language began to spread rapidly due to its flexibility and performance
+				</div>
 			</div>
-		</div>
+        </section>
+		<section>
+			number of  ideas became part of the new JavaScript standard
+		</section>
+        <section>
+          <div class="container">
+            <div class="col">
+              <img
+                style="width: 50%"
+                src="https://angular.io/assets/images/logos/angularjs/AngularJS-Shield.svg"
+                alt=""
+              />
+            </div>
+            <div class="col">
+              <img
+                style="width: 50%"
+                src="https://i.morioh.com/2019/12/03/a610119a2205.jpg"
+                alt=""
+              />
+            </div>
+          </div>
+        </section>
+        <section>Why do I need it???</section>
+        <section>
+          <ul>
+            <li class="fragment">Typing</li>
+            <li class="fragment">Code readability</li>
+            <li class="fragment">
+              Easier transition from the world of strong typing than to
+              JavaScript directly
+            </li>
+            <li class="fragment">Backward compatibility with JS</li>
+            <li class="fragment">IDE support</li>
+          </ul>
+        </section>
+        <section>
+          <section>
+            <div class="container">
+              <div class="col fragment">Typing</div>
+              <div class="col fragment">
+                Allows you to more fully describe the properties and methods of
+                objects and classes
+              </div>
+            </div>
+          </section>
+          <section>
+            <pre>
+				<code data-trim data-noescape>
+				function checkAllMyArgsAgain(check, me, please) {
+					if(check && me && please) {
+						if(check instanceof CheckObject){
+							console.log('Yahooo!');
+						} else {
+							console.log('And again an exception...')
+						}
+						if(me){} // And so on...
+					}
+				}
+				</code>
+			</pre>
+          </section>
+          <section>
+            <pre>
+				<code data-trim data-noescape>
+					function checkAllMyArgsAgain(check: CheckObject, me: MeObject, please: string): string {
+						return 'No need to check =)';
+					}
+				</code>
+			</pre>
+          </section>
+          <section>
+            <img
+              style="width: 40%"
+              src="https://i.pinimg.com/originals/a5/f5/3f/a5f53fc0b1f7d182ea201123d4c3d750.png"
+              alt="img"
+            />
+          </section>
+          <section>
+            You should not use
+            <span class="fragment highlight-red fade-in">any</span>
+          </section>
+          <section>
+            <img
+              style="width: 45%"
+              src="https://img.devrant.com/devrant/rant/r_3015646_HZCi4.jpg"
+              alt="img"
+            />
+          </section>
+          <section>
+            <img
+              src="https://media.itsnicethat.com/original_images/5d10d90c7fa44ca4a0000004.gif"
+              alt=""
+            />
+          </section>
+        </section>
+        <section>
+          <section>Code readability</section>
+          <section>
+            From the example above, it is obvious that it will be easier to read
+            the TypeScript code
+          </section>
+          <section>
+            <pre class="fragment">
+					<code data-trim data-noescape>
+						function checkMe(check, me) {
+							if(check && me) {
+								if(check){ ... }
+								if(me){ ... }
+							}
+					   }
+					</code>
+				</pre>
+            <pre class="fragment">
+					<code data-trim data-noescape>
+						function andCheckMe(check, me) {
+							if(check && me) {
+								if(check){ ... }
+								if(me){ ... }
+							}
+					   }
+					</code>
+				</pre>
+            <pre class="fragment">
+					<code data-trim data-noescape>
+						function andCheckMeToo(check, me) {
+							if(check && me) {
+								if(check){ ... }
+								if(me){ ... }
+							}
+					   }
+					</code>
+				</pre>
+          </section>
+          <section>Transforms to...</section>
+          <section>
+            <pre class="fragment">
+					<code data-trim data-noescape>
+						function checkMe(check: CheckObject, me: MeObject):string {
+							console.log('A lot better!');
+					   }
+					</code>
+				</pre>
+            <pre class="fragment">
+					<code data-trim data-noescape>
+						function andCheckMe(check: CheckObject, me: MeObject):string {
+							console.log('Right?');
+					   }
+					</code>
+				</pre>
+            <pre class="fragment">
+					<code data-trim data-noescape>
+						function andCheckMeToo(check: CheckObject, me: MeObject):string {
+							console.log('Satisfaction');
+					   }
+					</code>
+				</pre>
+          </section>
+        </section>
+        <section>
+          <div class="container">
+            <div class="col">Easier transition into language</div>
+            <div class="col fragment">
+              Many are interested in JS, but they are scared off by some
+              randomness and unpredictability of the language.
+            </div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <div class="col">Compatibility with JS</div>
+            <div class="col fragment">no need to rewrite all existing code</div>
+          </div>
+        </section>
+        <section>
+          <div class="container">
+            <div class="col">IDE support</div>
+            <div class="col fragment">has support in every popular IDE</div>
+          </div>
+        </section>
+        <section>
+          <section>Let's talk about disadvantages</section>
+          <section>
+            <ul>
+              <li class="fragment">Typing</li>
+              <li class="fragment">Compiler</li>
+              <li class="fragment">What if it dies?</li>
+            </ul>
+          </section>
+        </section>
+        <section>
+          <section>Typing</section>
+          <section>
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSdtbL3J1E4G0rLZWzvl6ibGzREdwDu-QT2Pw&usqp=CAU"
+              alt=""
+            />
+          </section>
+          <section>not typical of JavaScript</section>
+          <section>
+            the migration of existing popular JS solutions to TS
+          </section>
+        </section>
+        <section>
+          <div class="container">
+            <div class="col">Compiler</div>
+            <div class="col fragment">could be written on your knees</div>
+          </div>
+        </section>
+        <section>What if it dies?</section>
+        <section>
+          <h4>Thanks for listening!</h4>
+          <ul>
+            <li>Made by: Ruslan Kupzhassarov</li>
+            <li>Github: hxnxikazuchi</li>
+          </ul>
+        </section>
+      </div>
+    </div>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+    <script src="dist/reveal.js"></script>
+    <script src="plugin/notes/notes.js"></script>
+    <script src="plugin/markdown/markdown.js"></script>
+    <script src="plugin/highlight/highlight.js"></script>
+    <script>
+      // More info about initialization & config:
+      // - https://revealjs.com/initialization/
+      // - https://revealjs.com/config/
+      Reveal.initialize({
+        hash: true,
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+        // Learn about plugins: https://revealjs.com/plugins/
+        plugins: [RevealMarkdown, RevealHighlight, RevealNotes],
+      });
+    </script>
+  </body>
 </html>
